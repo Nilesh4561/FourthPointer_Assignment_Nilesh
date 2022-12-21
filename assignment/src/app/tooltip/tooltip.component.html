@@ -1,0 +1,36 @@
+<div class="component">
+  <div class="header">
+    <h2>Angular Component Tooltip Header</h2>
+  </div>
+  <div class="body">
+    <p class="center-text">Angular Component body</p>
+    <br />
+    <p>Positon Provided : left | right | top | bottom : {{ pos }}</p>
+    <p>Input Data Provided : name: {{ data.name }}, city: {{ data.city }}</p>
+    <p>Tooltip Contetnt : instanceof TooltipComponent</p>
+    <div class="input-group mb-3 mt-3">
+      <span class="input-group-text">Name</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="name"
+        aria-label="name"
+        readonly
+        [value]="data.name | uppercase"
+      />
+      <span class="input-group-text">City</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="city"
+        aria-label="city"
+        readonly
+        [value]="data.city | uppercase"
+      />
+    </div>
+  </div>
+  <mat-divider class="footer-divider"></mat-divider>
+  <div class="footer">
+    <small class="right-text">component header foot</small>
+  </div>
+</div>

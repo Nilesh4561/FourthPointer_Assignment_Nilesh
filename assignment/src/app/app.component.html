@@ -1,0 +1,82 @@
+<mat-chip-list class="chip-list">
+  <div>
+    <mat-chip
+      color="primary"
+      selected
+      [appCustomTooltip]="{
+        tooltipContent: tooltipTemplate,
+        inputData: { name: 'ravi', city: 'mumbai' },
+        postion: 'left'
+      }"
+    >
+      Template Tooltip Left
+    </mat-chip>
+    <mat-chip
+      color="primary"
+      selected
+      [appCustomTooltip]="{
+        tooltipContent: tooltipTemplate,
+        inputData: { name: 'siddhartha', city: 'pune' },
+        postion: 'top'
+      }"
+    >
+      Template Tooltip Top
+    </mat-chip>
+    <mat-chip
+      color="primary"
+      selected
+      [appCustomTooltip]="{
+        tooltipContent: tooltipTemplate,
+        inputData: { name: 'nilay', city: 'delhi' },
+        postion: 'bottom'
+      }"
+    >
+      Template Tooltip Bottom
+    </mat-chip>
+    <mat-chip
+      color="accent"
+      selected
+      [appCustomTooltip]="{
+        tooltipContent: tooltipComponent,
+        inputData: { name: 'nilesh', city: 'renukoot' },
+        postion: 'right'
+      }"
+    >
+      Component Tooltip
+    </mat-chip>
+  </div>
+</mat-chip-list>
+
+<ng-template #tooltipTemplate>
+  <div class="template">
+    <h3>Angular template tooltip</h3>
+    <p>
+      Positon Provided : left | right | top | bottom : {{ dataFlow.position }}
+    </p>
+    <p>
+      Input Data Provided : name: {{ dataFlow.inputData.name }}, city:
+      {{ dataFlow.inputData.city }}
+    </p>
+    <p>tooltip contetnt : instanceof TemplateRef</p>
+    <div class="input-group mb-3 mt-3">
+      <span class="input-group-text">Name</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="name"
+        aria-label="name"
+        readonly
+        [value]="dataFlow.inputData.name | uppercase"
+      />
+      <span class="input-group-text">City</span>
+      <input
+        type="text"
+        class="form-control"
+        placeholder="city"
+        aria-label="city"
+        readonly
+        [value]="dataFlow.inputData.city | uppercase"
+      />
+    </div>
+  </div>
+</ng-template>
